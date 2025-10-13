@@ -55,7 +55,7 @@ public class StudenMain {
         students.add(new Student(6, "Priya", "Kolkata", "IT", 92));
         students.add(new Student(7, "Ravi", "Nagpur", "Civil", 70));
         students.add(new Student(8, "Divya", "Bangalore", "CSE", 95));
-        students.add(new Student(9, "Ankit", "Indore", "ME", 80));
+        students.add(new Student(9, "ankit", "Indore", "ME", 80));
         students.add(new Student(10, "Kiran", "Jaipur", "IT", 83));
 
 
@@ -64,8 +64,14 @@ public class StudenMain {
                 .sorted((a, b) -> b.getName().compareTo(a.getName()))
                 .toList();
 
-        for (Student std:sortedList)
-            System.out.println(std.getName());
+//        for (Student std:sortedList)
+//            System.out.println(std.getName());
+
+//        print only students name starts with 'A'
+        students
+                .stream()
+                .filter(std->std.getName().toLowerCase().startsWith("a"))
+                .forEach(std-> System.out.println(std.getName()));
 
 
 //        for (Student std:students)
@@ -87,6 +93,7 @@ public class StudenMain {
 //        for(Student std:students)
 //            System.out.println(std.getName()+":"+std.getPlace());
 
+            List<String> countries= Arrays.asList("India","USA","UK","Canada","Australia","New Zealand","South Africa");
 
 //        students
 //                .stream()
@@ -103,6 +110,13 @@ public class StudenMain {
         numbers.add(41);
         numbers.add(51);
         numbers.add(61);
+
+        Map<Boolean, List<Integer>> collect = numbers
+                .stream()
+                .collect(Collectors.partitioningBy(n -> n % 2 == 0));
+
+        System.out.println("Evan numbers"+ collect.get(true));
+        System.out.println("Odd numbers"+ collect.get(false));
 
 //        System.out.println("Sorting array list");
 //        List<Integer> sortedList = numbers
