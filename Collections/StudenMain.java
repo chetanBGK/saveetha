@@ -115,10 +115,10 @@ public class StudenMain {
                 .stream()
                 .collect(Collectors.partitioningBy(n -> n % 2 == 0));
 
-        System.out.println("Evan numbers"+ collect.get(true));
+        System.out.println("Even numbers"+ collect.get(true));
         System.out.println("Odd numbers"+ collect.get(false));
 
-//        System.out.println("Sorting array list");
+//        System.out.println("Sorting array list");00000000000000000000000
 //        List<Integer> sortedList = numbers
 //                .stream()
 //                .sorted((fVal, sVal) -> fVal - sVal)
@@ -159,5 +159,43 @@ public class StudenMain {
 //        List<Integer> list = numbers.stream().sorted().toList();
 ////        System.out.println(list);
 //        numbers.stream().max((a,b)->b-a).ifPresent(System.out::println);
+
+//      List<Integer> numbersSet=new ArrayList<>();
+
+        List<Integer> numbers2=new LinkedList<>();
+
+        numbers2.add(10);
+        numbers2.add(20);
+        numbers2.add(30);
+        numbers2.add(80);
+        numbers2.add(40);
+        numbers2.add(31);
+        numbers2.add(81);
+        numbers2.add(41);
+        numbers2.add(51);
+        numbers2.add(61);
+//        numbers2.remove(1);
+//        numbers2.remove();
+
+        List<Integer> list = numbers2.stream().filter(n -> n % 3 == 0).toList();
+//        System.out.println(list);
+
+        Set<Integer> set = new HashSet<>();
+        set.add(10);
+        set.add(100);
+        set.add(20);
+        set.add(30);
+        set.add(40);
+        set.add(50);
+
+
+
+        System.out.println("Working with set");
+        for(int i:set)
+        {
+            System.out.println(i);
+        }
+
+
     }
 }
